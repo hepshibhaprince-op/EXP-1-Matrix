@@ -1,18 +1,16 @@
-# EXP-1: Matrix
+
+# EXP-1-Matrix
 
 ## Introduction to Matrix Using Machine Learning
 
-### AIM
+### AIM:
+Introduce matrix operations used in ML: transpose, inverse, solve linear systems, eigen decomposition.
 
-To introduce matrix operations used in Machine Learning: transpose, inverse, solving linear systems, and eigen decomposition.
+### ALGORITHM (Brief):
+Direct use of NumPy `numpy.linalg` routines; relate to linear regression normal equations.
 
-### ALGORITHM (Brief)
-
-Directly use NumPy's `numpy.linalg` routines to perform matrix operations and relate them to linear regression normal equations.
-
-### PROGRAM
-
-```
+### PROGRAM:
+```python
 import numpy as np
 
 A = np.array([[2.0, 1.0],
@@ -35,41 +33,41 @@ x = np.linalg.solve(A, b)
 print("\nSolve A x = b --> x:", np.round(x, 4))
 ```
 
-### DETAILED EXPLANATION
+### DETAILED EXPLANATION:
 
-1. `import numpy as np` – Loads NumPy for arrays and linear algebra operations.
-2. `A = np.array(...)` – Defines a 2×2 matrix A.
-3. `b = np.array(...)` – Defines a vector b for solving Ax = b.
-4. `print("Matrix A:", A)` – Displays the matrix for reference.
-5. `A.T` – Computes the transpose (rows ↔ columns).
-6. `np.linalg.inv(A)` – Computes the inverse of the matrix (exists only if A is invertible).
-7. `np.linalg.eig(A)` – Computes eigenvalues and eigenvectors. Eigenvalues help understand variance directions (PCA).
-8. `np.linalg.solve(A,b)` – Numerically solves a linear system more stably than `inv(A).dot(b)`.
+1. `import numpy as np` — Load NumPy for arrays and linear algebra.
+2. `A = np.array(...)` — Define a 2×2 matrix A.
+3. `b = np.array(...)` — Define vector b for solving A x = b.
+4. `print("Matrix A:", A)` — Show matrix for reference.
+5. `A.T` — Compute transpose (rows ↔ columns).
+6. `np.linalg.inv(A)` — Compute inverse of A (exists only if A is invertible).
+7. `np.linalg.eig(A)` — Compute eigenvalues and eigenvectors; eigenvalues help understand variance directions (PCA).
+8. `np.linalg.solve(A,b)` — Numerically solve linear system more stably than inv(A).dot(b).
 
-### SAMPLE OUTPUT
+### SAMPLE OUTPUT:
 
-```
+```text
 Matrix A:
- [[2. 1.]
-  [1. 3.]]
+[[2. 1.]
+ [1. 3.]]
 
 Transpose A^T:
- [[2. 1.]
-  [1. 3.]]
+[[2. 1.]
+ [1. 3.]]
 
 Inverse A^-1:
- [[ 0.6 -0.2]
-  [-0.2  0.4]]
+[[ 0.6 -0.2]
+ [-0.2  0.4]]
 
 Eigenvalues: [3.3028 1.6972]
 
 Solve A x = b --> x: [0.2 0.6]
 ```
 
-### RESULT
+### RESULT:
 
-Students understand concrete matrix computations and how to solve linear systems. The `solve()` function is related to normal equations in linear regression.
+Students see concrete matrix computations and how to solve linear systems; relate solve() to normal equations in linear regression.
 
-### THEORY
+### THEORY:
 
-Linear algebra (matrix inversion and eigen-decomposition) underpins PCA, linear models, and many optimization problems. Conditioning and invertibility are important.
+Linear algebra (matrix inversion, eigen-decomposition) underpins PCA, linear models, and many optimization problems. Conditioning/invertibility matters.
