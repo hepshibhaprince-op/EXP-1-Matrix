@@ -1,7 +1,9 @@
 # EXP-1-Matrix
 Introduction to Matrix using Machine learning 
 AIM:  Introduce matrix operations used in ML: transpose, inverse, solve linear systems, eigen decomposition. 
+
 ALGORITHM (brief): Direct use of numpy.linalg routines; relate to linear regression normal equations. 0
+
 PROGRAM (run in a Jupyter code cell): 
 import numpy as np 
 A = np.array([[2.0, 1.0],[1.0, 3.0]]) 
@@ -12,6 +14,7 @@ print("\nInverse A^-1:\n", np.linalg.inv(A))
 eigvals, eigvecs = np.linalg.eig(A) 
 print("\nEigenvalues:", np.round(eigvals,4)) 
 x = np.linalg.solve(A,b) print("\nSolve A x = b --> x:", np.round(x,4)) 
+
 DETAILED EXPLANATION: 
 1. import numpy as np — load NumPy for arrays and linear algebra.
 2. A = np.array(...) — define a 2×2 matrix A.
@@ -21,6 +24,7 @@ DETAILED EXPLANATION:
 6. np.linalg.inv(A) — compute inverse of A (exists only if A is invertible).
 7. np.linalg.eig(A) — compute eigenvalues and eigenvectors; eigenvalues help understand variance directions (PCA).
 8. np.linalg.solve(A,b) — numerically solve linear system more stably than inv(A).dot(b).
+
 SAMPLE OUTPUT:
 Matrix A:
 [[2. 1.]
